@@ -1,0 +1,65 @@
+
+aside {
+    float: left;
+    background: #181818;
+    width: 23%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+}
+
+aside img {
+    width: 60px;
+    float: left;
+}
+
+aside .logo{
+    font-size: 36px;
+    margin-left: 20px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+}
+
+aside ul {
+    list-style: none;
+    margin-top: 46px;
+}
+
+aside ul li {
+    margin-top: 16px;
+    transition: transform 0.2s ease;
+}
+
+aside ul li:hover, aside ul a:hover {
+    transform: scale(1.05);
+}
+
+main {
+    min-height: 130vh;
+    background: #e1f6f7eb;
+    float: left;
+    text-align: center;
+    width: 77%;
+}
+
+.content hr {
+    width: 80%;
+}
+
+.lesson {
+    border-radius: 8px;
+    padding: 10px;
+    float: left;
+    width: 38%;
+    margin: 20px 30px;
+    min-height: 100px;
+    background: #abe0e0;
+}
+
+.paginators {
+    float: left;
+    position: relative;
+    top: 100px;
+    width: 100%;
+}

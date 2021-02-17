@@ -1,0 +1,39 @@
+{% extends 'main/BASE.html' %}
+
+{% block title %} Бесплатные курсы {% endblock %}
+
+{% block content %}
+<div class="content">
+        <h1>Бесплатные курсы</h1>
+        <p>Далее представлены все бесплатные курсы на сервере проекта XYEcos</p>
+        <hr>
+
+        {% if lessons %}
+            {% for el in lessons %}
+                <div class="lesson" style="margin-left: 60px;">
+                    <h3 style="margin: 10px; height: 65px; border-bottom: 2px solid ">{{ el.title }}</h3>
+                    <p style="height: 100px;">{{ el.anons }}</p>
+                    <a href="{% url 'LessonDetail' el.id %}" class="btn btn-info" style="margin-bottom: 6px;">Читать</a>
+                </div>
+            {% endfor %}
+            <br>
+        {% else %}
+            <h3>*Но никто не пришел*</h3>
+            <p>Здесь нет статей, вы зря теряете время...</p>
+        {% endif %}
+
+        <div class="paginators">
+            {% if lessons.has_previous %}
+                <a class="btn btn-info" href="?page=1">Начало</a>
+                <a class="btn btn-info" href="?page={{ lessons.previous_page_number }}">Назад</a>
+            {% endif %}
+            {{ lessons.number }}<b>/</b>{{ lessons.paginator.num_pages }}
+            {% if lessons.has_next %}
+                <a class="btn btn-info" href="?page={{ lessons.next_page_number }}">Вперед</a>
+                <a class="btn btn-info" href="?page={{ lessons.paginator.num_pages }}">Конец</a>
+            {% endif %}
+        </div>
+
+        </div>
+
+    {% endblock %}

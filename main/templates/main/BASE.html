@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background: #181818;">
+    <aside>
+        <img src="{% static 'main/img/logo.svg' %}">
+        <span class="logo">XYEcos</span>
+        <ul>
+            <a href="{% url 'homepage' %}"><li>Главная</li></a>
+            <a href="{% url 'about' %}"><li>О нас</li></a>
+            <a href="{% url 'lessons' %}"><li>Бесплатные курсы</li></a>
+        </ul>
+    </aside>
+    <main>
+       {% block content%}
+
+        {% endblock %}
+    </main>
+</body>
+</html>
